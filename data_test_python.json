@@ -1,0 +1,92 @@
+{
+   "troubleshooting_scenarios":[
+      {
+         "issue":"Computer won't turn on",
+         "steps":[
+            "Check if the power cable is properly connected to the computer and the power outlet.",
+            "Ensure the power outlet is working by testing another device.",
+            "Press the power button firmly for at least 5 seconds.",
+            "If the computer still doesn't turn on, try using a different power cable.",
+            "Inspect the power supply unit for any visible damage or loose connections.",
+            "If all else fails, consult a professional technician."
+         ]
+      },
+      {
+         "issue":"No internet connection",
+         "steps":[
+            "Confirm that the network cable is securely connected to both the computer and the router.",
+            "Restart the router by unplugging it for 10 seconds and plugging it back in.",
+            "Check if the Wi-Fi is turned on, if using a wireless connection.",
+            "Run the network troubleshooter tool on your computer.",
+            "Verify the status of the network adapter in the device manager.",
+            "Reset the TCP/IP stack using the command prompt if problems persist."
+         ]
+      },
+      {
+         "issue":"Computer running slow",
+         "steps":[
+            "Restart the computer to clear temporary glitches.",
+            "Check for available disk space and clear unnecessary files.",
+            "Run a full antivirus scan to rule out malware.",
+            "Disable startup programs that are not needed immediately.",
+            "Increase virtual memory, if possible.",
+            "Consider upgrading hardware components like RAM or switching to an SSD."
+         ]
+      },
+      {
+         "issue":"Unable to print",
+         "steps":[
+            "Ensure the printer is turned on and connected to the computer.",
+            "Check the printer queue for any stuck print jobs and clear them.",
+            "Verify that the correct printer is selected as default.",
+            "Consult the printer's user guide for troubleshooting common errors.",
+            "Install/update the latest printer drivers from the manufacturer's website.",
+            "If the problem persists, reset the printer settings to default."
+         ]
+      },
+      {
+         "issue":"Software application crashes frequently",
+         "steps":[
+            "Check for updates for the application and install the latest version.",
+            "Ensure your operating system is up-to-date.",
+            "Run the application as an administrator.",
+            "Increase software compatibility mode settings if necessary.",
+            "Check application logs for any error messages.",
+            "Reinstall the application if no other solution works."
+         ]
+      },
+      {
+         "issue":"Audio not working",
+         "steps":[
+            "Ensure the speakers or headphones are connected properly.",
+            "Check the volume settings and make sure the sound is not muted.",
+            "Update your sound drivers through the device manager.",
+            "Try using a different audio device to rule out hardware issues.",
+            "Run the sound troubleshooter from the control panel.",
+            "Consider rolling back recent audio driver updates."
+         ]
+      },
+      {
+         "issue":"Blue Screen of Death (BSOD) error",
+         "steps":[
+            "Note down the error code displayed on the blue screen.",
+            "Restart your computer to see if the error recurs.",
+            "Ensure all hardware components are seated properly.",
+            "Run a full system virus and malware scan.",
+            "Remove recently installed software or drivers that might be causing the issue.",
+            "Use system restore to revert to a previous stable state."
+         ]
+      },
+      {
+         "issue":"USB device not recognized",
+         "steps":[
+            "Try using the USB device in a different USB port on the computer.",
+            "Restart the computer to refresh USB connections.",
+            "Update the USB drivers through the device manager.",
+            "Check the USB device on another computer to rule out issues with the device itself.",
+            "Disable USB selective suspend settings in the power options.",
+            "Consider uninstalling and reinstalling USB controllers in the device manager."
+         ]
+      }
+   ]
+}
