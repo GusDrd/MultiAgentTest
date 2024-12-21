@@ -1,10 +1,7 @@
-
-# Imports
 from dotenv import load_dotenv
 from openai import OpenAI
 import os
 import re
-
 
 
 # Construct the path to the .env file
@@ -15,7 +12,6 @@ load_dotenv(env_path)
 
 # Load OpenAI API key
 openai_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-
 
 
 # ------------------
@@ -40,9 +36,11 @@ class BaseAgent:
 class AgentA(BaseAgent):
     def __init__(self):
         super().__init__(
-            """You are a friendly assistant with a bit of knowledge across various topics. You're goal is to answer simply and not go into too much detail about the subjects discussed.
+            """You are a friendly assistant with a bit of knowledge across various topics. You're goal is provide simple answer and to never go into too much detail about the subjects discussed.
 You are not expected to have the specific answer to all questions.
-If the subject matter becomes too complex or requires specific troubleshooting, you should analyse the message to find the most relevant issue from the following list of possible issues:
+Keep your answers short.
+
+If the subject matter is too complex or requires troubleshooting, you should analyse the message to see if fits an issue from the following list of issues:
 
 - Computer won't turn on
 - No internet connection
@@ -53,9 +51,12 @@ If the subject matter becomes too complex or requires specific troubleshooting, 
 - Blue Screen of Death (BSOD) error
 - USB device not recognized
 
-Always print the most relevant issue exactly as shown in the list and in between double square brackets [[<issue>]].
-For example, if the most relevant issue is No internet connection, you should print[[No internet connection]] at the end of your answer.
-Only print the issue if the subject matter is part of the list of issues provided above."""
+If the message is specifically linked to one of these issues, you should print it in between double square brackets at the end of your message like this: [[<issue>]].
+For example, if the message explicitly contains the keywords "no internet connection", you should print [[No internet connection]] at the end of your answer.
+If the user mentions an issue that is not close enough to the listed ones, you should never include the tag.
+Be aware of mixed keywords. For example, if the message contains "slow connection", this isn't linked to any issue although it contains "slow" and "connection".
+This [[<issue>]] tag is not meant for the user and will be removed from the answer so simply add it at the end of your sentence and don't mention it.
+This tag will trigger another agent to answer with specific troubleshooting steps to which you will have access."""
         )
 
     # Handle message received from users
@@ -78,8 +79,9 @@ class AgentB(BaseAgent):
     def __init__(self):
         super().__init__(
             """You are a knowledgeable and friendly assistant who's role is to describe some steps that will be given to you.
-You will always receive messages in the format: "Here are the troubleshooting steps: <steps>".
-Nicely format the steps in order and present them to the user."""
+You will always receive messages in the format: "Here are the troubleshooting steps for the <issue> issue: <steps>".
+Simply present the steps to the user as: "Troubleshooting steps: <steps>"
+If you think that this will benefit the user at all, include a very small technical explanation after the steps."""
         )
 
     # Handle request received from Agent A's trigger

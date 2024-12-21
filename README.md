@@ -13,7 +13,7 @@ This project explores the use of OpenAI's API to create 2 agents and make them c
 ## Setup
 
 To setup the project, navigate to the project's directory and run the following command to install the necessary dependencies to run the project.  
-``pip install -r requirements.txt``
+``pip install --upgrade -r requirements.txt``
 
 
 You should also make sure that a correct ``OPENAI_API_KEY`` key is provided in the ``.env`` environment file.
@@ -32,6 +32,8 @@ This issue tag will trigger a message to be sent to **Agent B** requesting to fo
 
 ### Further Improvements
 
-Further features could include additional tags such as ``[[FOLLOW_UP]]`` so that **Agent B** provides additional information to **Agent A**. This would make **Agent B** more useful since its only role is to treat information from the json file.
+Further features could include additional tags such as ``[[FOLLOW_UP]]`` so that **Agent B** provides additional information to **Agent A**. This would make **Agent B** more useful since its only role is to treat information from the json file. Although I haven't implemented this, I prompted **Agent B** to provide a small justification sentence and debated whether to only pass this information to **Agent A** and not the user.
 
 A **Mediator Agent** could also be implemented to orchestrate the information transmission between **Agent A** and **Agent B**, only sharing information with one or the other if it deems it necessary.
+
+And for the most obvious improvement, better and more carefully crafted system prompts will always help make the conversation flow smoother between both agents and the user.
