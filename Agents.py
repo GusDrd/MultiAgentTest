@@ -3,7 +3,7 @@ import re
 
 
 # ------------------
-# BASE AGENT Class   (Serves as a template for different agents)
+# BASE_AGENT Class   (Serves as a template for different agents)
 # ------------------
 class BaseAgent:
     def __init__(self, system_prompt):
@@ -62,9 +62,9 @@ This tag will trigger another agent to answer with specific troubleshooting step
         self.message_history[user].append({"role": "assistant", "content": f"""{message}"""})  # Append new knowledge
 
 
-# ---------
-# AGENT_B   (Provides information to AGENT_A when triggered to)
-# ---------
+# ---------------
+# AGENT_B Class   (Provides information to AGENT_A when triggered to)
+# ---------------
 class AgentB(BaseAgent):
     def __init__(self):
         super().__init__(
